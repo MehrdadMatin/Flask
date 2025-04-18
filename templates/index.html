@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Index Page{% endblock %}
+
+{% block content %}
+    <h1>Welcome to My Flask App</h1>
+    <p>This is a simple Flask application.</p>
+    <a href="{{ url_for('hello') }}">Say Hello</a>
+    <p>{{myvalue}}</p>
+    <p>{{myresult}}</p>
+    <ul>
+        {% for item in mylist %}
+                <li {% if item == 3 %} stlye="color: red"{% endif %}>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <p>{{mylist}}</p>
+
+    <a href="{{ url_for('other') }}">Other</a>
+{% endblock %}
